@@ -18,9 +18,6 @@ class Text extends React.Component {
       h6 && styles.h6,
     ];
 
-    console.log(textStyles);
-
-
     return (
       <RNText
         {...this.props}

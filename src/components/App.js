@@ -9,11 +9,17 @@
 import React from 'react';
 import { Platform, StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-native';
 
+import Analytics from 'appcenter-analytics';
+
 import { Header, TouchableIcon, Text } from './common';
 
 type Props = {};
 
 export default class App extends React.Component<Props> {
+  componentDidMount = async () => {
+    await Analytics.setEnabled(true);
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
