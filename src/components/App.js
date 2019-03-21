@@ -7,9 +7,9 @@
  */
 
 import React from 'react';
-import { Platform, StyleSheet, View, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
 
-import { Header, TouchableIcon, Text } from './common';
+import { Header, TouchableIcon, Text, theme } from './common';
 
 type Props = {};
 
@@ -17,6 +17,7 @@ export default class App extends React.Component<Props> {
   render() {
     return (
       <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" />
         <Header>
           <Text h1 style={styles.headerTitle}>Today</Text>
         </Header>
@@ -26,14 +27,12 @@ export default class App extends React.Component<Props> {
             <View style={styles.rowCount}>
               <Text h1 bold>7</Text>
             </View>
-
             <View style={styles.rowBody}>
               <View style={{ flexDirection: 'column' }}>
-                <Text>Hangs</Text>
-                <Text>7 to go</Text>
+                <Text h6 bold>Hangs</Text>
+                <Text style={[styles.muted, styles.caption]}>7 to go</Text>
               </View>
             </View>
-
             <View style={styles.rowAction}>
               <TouchableIcon
                 name="plus"
@@ -42,7 +41,61 @@ export default class App extends React.Component<Props> {
             </View>
           </View>
 
+          <View style={styles.rowWrapper}>
+            <View style={styles.rowCount}>
+              <Text h1 bold>12</Text>
+            </View>
+            <View style={styles.rowBody}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text h6 bold>Runs</Text>
+                <Text style={[styles.muted, styles.caption]}>1 to go</Text>
+              </View>
+            </View>
+            <View style={styles.rowAction}>
+              <TouchableIcon
+                name="plus"
+                style={{ color: 'white', fontSize: 72 }}
+              />
+            </View>
+          </View>
+
+          <View style={styles.rowWrapper}>
+            <View style={styles.rowCount}>
+              <Text h1 bold style={styles.muted}>2</Text>
+            </View>
+            <View style={styles.rowBody}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text h6 bold>Mindful</Text>
+                <Text style={[styles.muted, styles.caption]}>10 to go</Text>
+              </View>
+            </View>
+            <View style={styles.rowAction}>
+              <TouchableIcon
+                name="plus"
+                style={{ color: 'white', fontSize: 72 }}
+              />
+            </View>
+          </View>
+
+          <View style={styles.rowWrapper}>
+            <View style={styles.rowCount}>
+              <Text h1 bold>142</Text>
+            </View>
+            <View style={styles.rowBody}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text h6 bold>Distance</Text>
+                <Text style={[styles.muted, styles.caption]}>On track!</Text>
+              </View>
+            </View>
+            <View style={styles.rowAction}>
+              <TouchableIcon
+                name="plus"
+                style={{ color: 'white', fontSize: 72 }}
+              />
+            </View>
+          </View>
         </View>
+
       </SafeAreaView>
     );
   }
@@ -51,7 +104,7 @@ export default class App extends React.Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#232837',
+    backgroundColor: theme.colors.darkGray,
   },
   headerTitle: {
     color: '#fff',
@@ -62,27 +115,30 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   rowWrapper: {
-    borderWidth: 2,
-    borderColor: '#80E723', // light green
     flex: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
   },
   rowCount: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'white',
+    alignItems: 'flex-end',
+    paddingRight: theme.margin.normal,
   },
   rowBody: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   rowAction: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  muted: {
+    color: theme.colors.muted,
+  },
+  caption: {
+    fontWeight: 'bold',
+    fontSize: 12,
+  }
 });

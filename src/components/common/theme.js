@@ -17,13 +17,14 @@ const margin = Object.freeze({ ...sizes });
 const padding = Object.freeze({ ...sizes });
 
 const colors = Object.freeze({
-  primary: '',
-  secondary: '',
-  tertiary: '',
-  black: '',
+  primary: '#7258F6', // purple color
+  secondary: '#80E723', // green highlights
+  tertiary: '#F757AD', // pink highlights
+  black: '#000',
   white: '#fff',
-  gray: '',
-  darkGray: '',
+  muted: '#535762', // for typography
+  gray: '#3363E51',
+  darkGray: '#232837', // bg color
 });
 
 const fonts = Object.freeze({
