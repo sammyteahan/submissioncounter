@@ -126,8 +126,9 @@ const styles = StyleSheet.create({
   },
   rowBody: {
     flex: 1,
+    paddingLeft: theme.padding.normal,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   rowAction: {
     flex: 1,
