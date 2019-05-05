@@ -3,7 +3,6 @@
  *
  * @format
  * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
 import React from 'react';
