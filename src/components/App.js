@@ -4,7 +4,6 @@
  * @format
  * @flow
  */
-
 import React from 'react';
 import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
 
@@ -12,9 +11,7 @@ import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 import { Header, TouchableIcon, Text, theme } from './common';
 
-type Props = {};
-
-export default class App extends React.Component<Props> {
+export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
   onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
