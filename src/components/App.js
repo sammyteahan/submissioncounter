@@ -9,11 +9,17 @@
 import React from 'react';
 import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
 
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
+
 import { Header, TouchableIcon, Text, theme } from './common';
 
 type Props = {};
 
 export default class App extends React.Component<Props> {
+  onHapticSelection = () => ReactNativeHapticFeedback.trigger();
+  onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
+  onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -35,6 +41,7 @@ export default class App extends React.Component<Props> {
             </View>
             <View style={styles.rowAction}>
               <TouchableIcon
+                onPress={this.onHapticSelection}
                 name="plus"
                 style={{ color: 'white', fontSize: 72 }}
               />
@@ -53,6 +60,26 @@ export default class App extends React.Component<Props> {
             </View>
             <View style={styles.rowAction}>
               <TouchableIcon
+                onPress={this.onHapticSelection}
+                name="plus"
+                style={{ color: 'white', fontSize: 72 }}
+              />
+            </View>
+          </View>
+
+          <View style={styles.rowWrapper}>
+            <View style={styles.rowCount}>
+              <Text h1 bold>12</Text>
+            </View>
+            <View style={styles.rowBody}>
+              <View style={{ flexDirection: 'column' }}>
+                <Text h6 bold>Lifts</Text>
+                <Text style={[styles.muted, styles.caption]}>1 to go</Text>
+              </View>
+            </View>
+            <View style={styles.rowAction}>
+              <TouchableIcon
+                onPress={this.onHapticSelection}
                 name="plus"
                 style={{ color: 'white', fontSize: 72 }}
               />
@@ -71,6 +98,7 @@ export default class App extends React.Component<Props> {
             </View>
             <View style={styles.rowAction}>
               <TouchableIcon
+                onPress={this.onHapticMedium}
                 name="plus"
                 style={{ color: 'white', fontSize: 72 }}
               />
@@ -90,12 +118,12 @@ export default class App extends React.Component<Props> {
             <View style={styles.rowAction}>
               <TouchableIcon
                 name="plus"
+                onPress={this.onNotificationWarning}
                 style={{ color: 'white', fontSize: 72 }}
               />
             </View>
           </View>
         </View>
-
       </SafeAreaView>
     );
   }

@@ -13,6 +13,7 @@
     "react": "16.6.3",
     "react-native": "0.58.5",
     "react-native-google-signin": "^1.2.0",
+    "react-native-haptic-feedback": "^1.6.0",
     "react-native-vector-icons": "^6.3.0"
   },
   "devDependencies": {
@@ -30,5 +31,5 @@
     "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
     "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
     "<rootDir>/node_modules/appcenter-push/test/AppCenterPushMock.js"
- ]
+  ]
 }

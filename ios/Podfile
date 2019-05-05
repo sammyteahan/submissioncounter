@@ -11,6 +11,8 @@ target 'submissioncounter' do
   # Pods for submissioncounter
 
   platform :ios, '9.0'
+  pod 'react-native-haptic-feedback', :path => '../node_modules/react-native-haptic-feedback'
+
   target 'submissioncounterTests' do
     inherit! :search_paths
     # Pods for testing

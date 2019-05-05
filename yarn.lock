@@ -4013,6 +4013,11 @@ react-native-google-signin@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-native-google-signin/-/react-native-google-signin-1.2.0.tgz#a34222c685016cc3c4dc5648b0d13d6c576e1acd"
 
+react-native-haptic-feedback@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-haptic-feedback/-/react-native-haptic-feedback-1.6.0.tgz#32c7fd9bcdb0e639dfd5e3515a238a74e05c4484"
+  integrity sha512-caZ0q5UqJQVYXeGvJPt8YMrrWXJ9a+uLNu6ilvSgc61ydjw3BY2fObvOTognJnV9aNn53LjJ7AAhsaVAsbW28g==
+
 react-native-vector-icons@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.3.0.tgz#47a0c9e04e045c0ea0b9ca450e2af84e45c07b3f"
