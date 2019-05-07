@@ -9,7 +9,7 @@ import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView } from
 
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
-import { Header, TouchableIcon, Text, theme, FixedFooter } from './common';
+import { Header, TouchableIcon, Text, theme } from './common';
 
 export default class App extends React.Component {
   state = { text: 'placeholder', second: 'second' };
@@ -122,30 +122,8 @@ export default class App extends React.Component {
                 />
               </View>
             </View>
-
-            <View style={{ borderWidth: 2, borderColor: 'green' }}>
-              <TextInput
-                style={{ height: 45, width: '100%', color: 'white' }}
-                onChangeText={text => this.setState({ text })}
-                value={this.state.text}
-              />
-            </View>
-            <View style={{ borderWidth: 2, borderColor: 'green' }}>
-              <TextInput
-                style={{ height: 45, width: '100%', color: 'white' }}
-                onChangeText={text => this.setState({ second: text })}
-                value={this.state.second}
-              />
-            </View>
           </View>
         </ScrollView>
-
-        {/*
-        <FixedFooter style={styles.fixedFooter}>
-          <Text>Hey this should be at the bottom</Text>
-        </FixedFooter>
-        */}
-
       </SafeAreaView>
     );
   }
