@@ -5,13 +5,15 @@
  * @flow
  */
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
+import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView } from 'react-native';
 
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
-import { Header, TouchableIcon, Text, theme } from './common';
+import { Header, TouchableIcon, Text, theme, FixedFooter } from './common';
 
 export default class App extends React.Component {
+  state = { text: 'placeholder', second: 'second' };
+
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
   onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
@@ -24,102 +26,126 @@ export default class App extends React.Component {
           <Text h1 style={styles.headerTitle}>Today</Text>
         </Header>
 
-        <View style={styles.contentWrapper}>
-          <View style={styles.rowWrapper}>
-            <View style={styles.rowCount}>
-              <Text h1 bold>7</Text>
-            </View>
-            <View style={styles.rowBody}>
-              <View style={{ flexDirection: 'column' }}>
-                <Text h6 bold>Hangs</Text>
-                <Text style={[styles.muted, styles.caption]}>7 to go</Text>
+        <ScrollView>
+          <View>
+            <View style={styles.rowWrapper}>
+              <View style={styles.rowCount}>
+                <Text h1 bold>7</Text>
+              </View>
+              <View style={styles.rowBody}>
+                <View style={{ flexDirection: 'column' }}>
+                  <Text h6 bold>Hangs</Text>
+                  <Text style={[styles.muted, styles.caption]}>7 to go</Text>
+                </View>
+              </View>
+              <View style={styles.rowAction}>
+                <TouchableIcon
+                  onPress={this.onHapticSelection}
+                  name="plus"
+                  style={{ color: 'white', fontSize: 72 }}
+                />
               </View>
             </View>
-            <View style={styles.rowAction}>
-              <TouchableIcon
-                onPress={this.onHapticSelection}
-                name="plus"
-                style={{ color: 'white', fontSize: 72 }}
-              />
-            </View>
-          </View>
 
-          <View style={styles.rowWrapper}>
-            <View style={styles.rowCount}>
-              <Text h1 bold>12</Text>
-            </View>
-            <View style={styles.rowBody}>
-              <View style={{ flexDirection: 'column' }}>
-                <Text h6 bold>Runs</Text>
-                <Text style={[styles.muted, styles.caption]}>1 to go</Text>
+            <View style={styles.rowWrapper}>
+              <View style={styles.rowCount}>
+                <Text h1 bold>12</Text>
+              </View>
+              <View style={styles.rowBody}>
+                <View style={{ flexDirection: 'column' }}>
+                  <Text h6 bold>Runs</Text>
+                  <Text style={[styles.muted, styles.caption]}>1 to go</Text>
+                </View>
+              </View>
+              <View style={styles.rowAction}>
+                <TouchableIcon
+                  onPress={this.onHapticSelection}
+                  name="plus"
+                  style={{ color: 'white', fontSize: 72 }}
+                />
               </View>
             </View>
-            <View style={styles.rowAction}>
-              <TouchableIcon
-                onPress={this.onHapticSelection}
-                name="plus"
-                style={{ color: 'white', fontSize: 72 }}
-              />
-            </View>
-          </View>
 
-          <View style={styles.rowWrapper}>
-            <View style={styles.rowCount}>
-              <Text h1 bold>12</Text>
-            </View>
-            <View style={styles.rowBody}>
-              <View style={{ flexDirection: 'column' }}>
-                <Text h6 bold>Lifts</Text>
-                <Text style={[styles.muted, styles.caption]}>1 to go</Text>
+            <View style={styles.rowWrapper}>
+              <View style={styles.rowCount}>
+                <Text h1 bold>12</Text>
+              </View>
+              <View style={styles.rowBody}>
+                <View style={{ flexDirection: 'column' }}>
+                  <Text h6 bold>Lifts</Text>
+                  <Text style={[styles.muted, styles.caption]}>1 to go</Text>
+                </View>
+              </View>
+              <View style={styles.rowAction}>
+                <TouchableIcon
+                  onPress={this.onHapticSelection}
+                  name="plus"
+                  style={{ color: 'white', fontSize: 72 }}
+                />
               </View>
             </View>
-            <View style={styles.rowAction}>
-              <TouchableIcon
-                onPress={this.onHapticSelection}
-                name="plus"
-                style={{ color: 'white', fontSize: 72 }}
-              />
-            </View>
-          </View>
 
-          <View style={styles.rowWrapper}>
-            <View style={styles.rowCount}>
-              <Text h1 bold style={styles.muted}>2</Text>
-            </View>
-            <View style={styles.rowBody}>
-              <View style={{ flexDirection: 'column' }}>
-                <Text h6 bold>Mindful</Text>
-                <Text style={[styles.muted, styles.caption]}>10 to go</Text>
+            <View style={styles.rowWrapper}>
+              <View style={styles.rowCount}>
+                <Text h1 bold style={styles.muted}>2</Text>
+              </View>
+              <View style={styles.rowBody}>
+                <View style={{ flexDirection: 'column' }}>
+                  <Text h6 bold>Mindful</Text>
+                  <Text style={[styles.muted, styles.caption]}>10 to go</Text>
+                </View>
+              </View>
+              <View style={styles.rowAction}>
+                <TouchableIcon
+                  onPress={this.onHapticMedium}
+                  name="plus"
+                  style={{ color: 'white', fontSize: 72 }}
+                />
               </View>
             </View>
-            <View style={styles.rowAction}>
-              <TouchableIcon
-                onPress={this.onHapticMedium}
-                name="plus"
-                style={{ color: 'white', fontSize: 72 }}
-              />
-            </View>
-          </View>
 
-          <View style={styles.rowWrapper}>
-            <View style={styles.rowCount}>
-              <Text h1 bold>142</Text>
-            </View>
-            <View style={styles.rowBody}>
-              <View style={{ flexDirection: 'column' }}>
-                <Text h6 bold>Distance</Text>
-                <Text style={[styles.muted, styles.caption]}>On track!</Text>
+            <View style={styles.rowWrapper}>
+              <View style={styles.rowCount}>
+                <Text h1 bold>142</Text>
+              </View>
+              <View style={styles.rowBody}>
+                <View style={{ flexDirection: 'column' }}>
+                  <Text h6 bold>Distance</Text>
+                  <Text style={[styles.muted, styles.caption]}>On track!</Text>
+                </View>
+              </View>
+              <View style={styles.rowAction}>
+                <TouchableIcon
+                  name="plus"
+                  onPress={this.onNotificationWarning}
+                  style={{ color: 'white', fontSize: 72 }}
+                />
               </View>
             </View>
-            <View style={styles.rowAction}>
-              <TouchableIcon
-                name="plus"
-                onPress={this.onNotificationWarning}
-                style={{ color: 'white', fontSize: 72 }}
+
+            <View style={{ borderWidth: 2, borderColor: 'green' }}>
+              <TextInput
+                style={{ height: 45, width: '100%', color: 'white' }}
+                onChangeText={text => this.setState({ text })}
+                value={this.state.text}
+              />
+            </View>
+            <View style={{ borderWidth: 2, borderColor: 'green' }}>
+              <TextInput
+                style={{ height: 45, width: '100%', color: 'white' }}
+                onChangeText={text => this.setState({ second: text })}
+                value={this.state.second}
               />
             </View>
           </View>
-        </View>
+        </ScrollView>
+
+        {/*
+        <FixedFooter style={styles.fixedFooter}>
+          <Text>Hey this should be at the bottom</Text>
+        </FixedFooter>
+        */}
+
       </SafeAreaView>
     );
   }
@@ -165,5 +191,10 @@ const styles = StyleSheet.create({
   caption: {
     fontWeight: 'bold',
     fontSize: 12,
-  }
+  },
+  fixedFooter: {
+    borderWidth: 2,
+    borderColor: 'pink',
+    alignItems: 'center',
+  },
 });
