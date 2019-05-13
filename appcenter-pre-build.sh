@@ -4,7 +4,7 @@
 # based on branch
 if [ "$APPCENTER_BRANCH" == "master" ]; then
   cp .env.staging .env
-if [ "$APPCENTER_BRANCH" == "production" ]; then
+elif [ "$APPCENTER_BRANCH" == "production" ]; then
   cp .env.production .env
 else
   cp .env.staging .env
