@@ -10,5 +10,7 @@ else
   cp .env.staging .env
 fi
 
+printf "\n***************************\n"
 printf "\n.env created with contents:\n"
+printf "\n***************************\n"
 cat .env

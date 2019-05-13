@@ -60,3 +60,6 @@ buck-out/
 
 # Environment
 .env
+.env.local
+.env.staging
+.env.production
