@@ -23,6 +23,8 @@ target 'submissioncounter' do
   pod 'AppCenter/Crashes', '~> 1.13.2'
   pod 'AppCenter/Analytics', '~> 1.13.2'
   pod 'AppCenterReactNativeShared', '~> 1.12.2'
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
 end
 
 post_install do |installer|
