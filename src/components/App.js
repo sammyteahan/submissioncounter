@@ -5,7 +5,7 @@
  * @flow
  */
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView, Alert, AlertIOS } from 'react-native';
+import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView, Alert } from 'react-native';
 
 import Config from 'react-native-config';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
@@ -16,7 +16,7 @@ export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
   onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
-  handleAlert = () => AlertIOS.alert('title', `${Config.BASE_URL}`);
+  handleAlert = () => Alert.alert('title', `${Config.BASE_URL}`);
 
   render() {
     return (
