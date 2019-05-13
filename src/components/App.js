@@ -5,8 +5,9 @@
  * @flow
  */
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView, Alert, AlertIOS } from 'react-native';
 
+import Config from 'react-native-config';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 import { Header, TouchableIcon, Text, theme } from './common';
@@ -15,6 +16,7 @@ export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
   onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
+  handleAlert = () => AlertIOS.alert('title', `${Config.BASE_URL}`);
 
   render() {
     return (
@@ -108,14 +110,15 @@ export default class App extends React.Component {
               </View>
               <View style={styles.rowBody}>
                 <View style={{ flexDirection: 'column' }}>
-                  <Text h6 bold>Distance</Text>
+                  {/* <Text h6 bold>Distance</Text> */}
+                  <Text h6 bold>Config</Text>
                   <Text style={[styles.muted, styles.caption]}>On track!</Text>
                 </View>
               </View>
               <View style={styles.rowAction}>
                 <TouchableIcon
                   name="plus"
-                  onPress={this.onNotificationWarning}
+                  onPress={this.handleAlert}
                   style={{ color: 'white', fontSize: 72 }}
                 />
               </View>
