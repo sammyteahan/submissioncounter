@@ -12,8 +12,6 @@ import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import { Header, TouchableIcon, Text, theme } from './common';
 
 export default class App extends React.Component {
-  state = { text: 'placeholder', second: 'second' };
-
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
   onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
