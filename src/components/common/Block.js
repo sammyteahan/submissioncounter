@@ -43,7 +43,7 @@ class Block extends React.Component {
 const styles = StyleSheet.create({
   block: { flex: 1 },
   row: { flexDirection: 'row' },
-  column: { flexDirection: column },
+  column: { flexDirection: 'column' },
   center: { alignItems: 'center' },
   middle: { justifyContent: 'center' },
   left: { justifyContent: 'flex-start' },
