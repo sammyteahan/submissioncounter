@@ -16,7 +16,7 @@ export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
   onHapticMedium = () => ReactNativeHapticFeedback.trigger('impactMedium', true);
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
-  handleAlert = () => Alert.alert(`${Config.ENV}`, `${Config.BASE_URL}`);
+  handleAlert = () => Alert.alert(`${Config.ENV}`, `${Config.API_URL}`);
 
   render() {
     return (
