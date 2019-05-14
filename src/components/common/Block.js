@@ -41,30 +41,14 @@ class Block extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  block: {
-    flex: 1,
-  },
-  row: {
-    flexDirection: 'row',
-  },
-  column: {
-    flexDirection: column,
-  },
-  center: {
-    alignItems: 'center',
-  },
-  middle: {
-    justifyContent: 'center',
-  },
-  left: {
-    justifyContent: 'flex-start',
-  },
-  right: {
-    justifyContent: 'flex-end',
-  },
-  card: {
-    borderRadius: theme.sizes.border,
-  },
+  block: { flex: 1 },
+  row: { flexDirection: 'row' },
+  column: { flexDirection: column },
+  center: { alignItems: 'center' },
+  middle: { justifyContent: 'center' },
+  left: { justifyContent: 'flex-start' },
+  right: { justifyContent: 'flex-end' },
+  card: { borderRadius: theme.sizes.border },
   primary: { backgroundColor: theme.colors.primary },
   secondary: { backgroundColor: theme.colors.secondary },
   tertiary: { backgroundColor: theme.colors.tertiary },
