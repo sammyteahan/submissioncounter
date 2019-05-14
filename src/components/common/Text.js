@@ -36,6 +36,14 @@ const styles = StyleSheet.create({
   h5: theme.fonts.h5,
   h6: theme.fonts.h6,
   bold: { fontWeight: 'bold' },
+  primary: { color: theme.colors.primary },
+  secondary: { color: theme.colors.secondary },
+  tertiary: { color: theme.colors.tertiary },
+  black: { color: theme.colors.black },
+  white: { color: theme.colors.white },
+  muted: { color: theme.colors.muted },
+  gray: { color: theme.colors.gray },
+  darkGray: { color: theme.colors.darkGray },
 });
 
 export { Text as default };
