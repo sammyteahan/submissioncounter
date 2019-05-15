@@ -61,7 +61,7 @@ export default class App extends React.Component {
 
           <Block flex={0} row space="between">
             <Block flex={1} row right>
-              <Text h1 bold>142</Text>
+              <Text h1 bold style={styles.muted}>142</Text>
             </Block>
             <Block flex={1} style={styles.padLeft}>
               <Block column middle>
