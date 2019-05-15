@@ -10,7 +10,8 @@ import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView, Alert
 import Config from 'react-native-config';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
-import { Header, TouchableIcon, Text, theme } from './common';
+import SubmissionRow from './SubmissionRow';
+import { Header, TouchableIcon, Text, Block, theme } from './common';
 
 export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
@@ -27,103 +28,55 @@ export default class App extends React.Component {
         </Header>
 
         <ScrollView>
-          <View>
-            <View style={styles.rowWrapper}>
-              <View style={styles.rowCount}>
-                <Text h1 bold>7</Text>
-              </View>
-              <View style={styles.rowBody}>
-                <View style={{ flexDirection: 'column' }}>
-                  <Text h6 bold>Hangs</Text>
-                  <Text style={[styles.muted, styles.caption]}>7 to go</Text>
-                </View>
-              </View>
-              <View style={styles.rowAction}>
-                <TouchableIcon
-                  onPress={this.onHapticSelection}
-                  name="plus"
-                  style={{ color: 'white', fontSize: 72 }}
-                />
-              </View>
-            </View>
+          <SubmissionRow
+            name={'Hangs'}
+            count={7}
+            remaining={21}
+            onIncrement={this.onHapticMedium}
+          />
+          <SubmissionRow
+            name={'Runs'}
+            count={12}
+            remaining={1}
+            onIncrement={this.onHapticMedium}
+          />
+          <SubmissionRow
+            name={'Lifts'}
+            count={3}
+            remaining={1}
+            onIncrement={this.onHapticMedium}
+          />
+          <SubmissionRow
+            name={'Mindful'}
+            count={2}
+            remaining={10}
+            onIncrement={this.onHapticMedium}
+          />
+          <SubmissionRow
+            name={'Block'}
+            count={31}
+            remaining={7}
+            onIncrement={this.onHapticMedium}
+          />
 
-            <View style={styles.rowWrapper}>
-              <View style={styles.rowCount}>
-                <Text h1 bold>12</Text>
-              </View>
-              <View style={styles.rowBody}>
-                <View style={{ flexDirection: 'column' }}>
-                  <Text h6 bold>Runs</Text>
-                  <Text style={[styles.muted, styles.caption]}>1 to go</Text>
-                </View>
-              </View>
-              <View style={styles.rowAction}>
-                <TouchableIcon
-                  onPress={this.onHapticSelection}
-                  name="plus"
-                  style={{ color: 'white', fontSize: 72 }}
-                />
-              </View>
-            </View>
-
-            <View style={styles.rowWrapper}>
-              <View style={styles.rowCount}>
-                <Text h1 bold>12</Text>
-              </View>
-              <View style={styles.rowBody}>
-                <View style={{ flexDirection: 'column' }}>
-                  <Text h6 bold>Lifts</Text>
-                  <Text style={[styles.muted, styles.caption]}>1 to go</Text>
-                </View>
-              </View>
-              <View style={styles.rowAction}>
-                <TouchableIcon
-                  onPress={this.onHapticSelection}
-                  name="plus"
-                  style={{ color: 'white', fontSize: 72 }}
-                />
-              </View>
-            </View>
-
-            <View style={styles.rowWrapper}>
-              <View style={styles.rowCount}>
-                <Text h1 bold style={styles.muted}>2</Text>
-              </View>
-              <View style={styles.rowBody}>
-                <View style={{ flexDirection: 'column' }}>
-                  <Text h6 bold>Mindful</Text>
-                  <Text style={[styles.muted, styles.caption]}>10 to go</Text>
-                </View>
-              </View>
-              <View style={styles.rowAction}>
-                <TouchableIcon
-                  onPress={this.onHapticMedium}
-                  name="plus"
-                  style={{ color: 'white', fontSize: 72 }}
-                />
-              </View>
-            </View>
-
-            <View style={styles.rowWrapper}>
-              <View style={styles.rowCount}>
-                <Text h1 bold>142</Text>
-              </View>
-              <View style={styles.rowBody}>
-                <View style={{ flexDirection: 'column' }}>
-                  {/* <Text h6 bold>Distance</Text> */}
-                  <Text h6 bold>Config</Text>
-                  <Text style={[styles.muted, styles.caption]}>On track!</Text>
-                </View>
-              </View>
-              <View style={styles.rowAction}>
-                <TouchableIcon
-                  name="plus"
-                  onPress={this.handleAlert}
-                  style={{ color: 'white', fontSize: 72 }}
-                />
-              </View>
-            </View>
-          </View>
+          <Block flex={0} row space="between">
+            <Block flex={1} row right>
+              <Text h1 bold>142</Text>
+            </Block>
+            <Block flex={1} style={styles.padLeft}>
+              <Block column middle>
+                <Text h6 bold>Config</Text>
+                <Text style={[styles.muted, styles.caption]}>endpoint vars</Text>
+              </Block>
+            </Block>
+            <Block flex={1} center middle>
+              <TouchableIcon
+                name="plus"
+                onPress={this.handleAlert}
+                style={{ color: 'white', fontSize: 72 }}
+              />
+            </Block>
+          </Block>
         </ScrollView>
       </SafeAreaView>
     );
@@ -139,31 +92,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 28,
   },
-  contentWrapper: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  rowWrapper: {
-    flex: 0,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  rowCount: {
-    flex: 1,
-    alignItems: 'flex-end',
-    paddingRight: theme.margin.normal,
-  },
-  rowBody: {
-    flex: 1,
-    paddingLeft: theme.padding.normal,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-  },
-  rowAction: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   muted: {
     color: theme.colors.muted,
   },
@@ -171,9 +99,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 12,
   },
-  fixedFooter: {
-    borderWidth: 2,
-    borderColor: 'pink',
-    alignItems: 'center',
+  padLeft: {
+    paddingLeft: theme.padding.large,
   },
 });

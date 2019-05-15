@@ -15,8 +15,8 @@ class Block extends React.Component {
       right,
       card,
       color,
+      space,
       style,
-      ...rest,
     } = this.props;
 
     const blockStyles = [
@@ -32,10 +32,11 @@ class Block extends React.Component {
       card && styles.card,
       color && styles[color], // use defined colors for backgroundColor
       color && !styles[color] && { backgroundColor: color }, // custom bg color
+      space && { justifyContent: `space-${space}` },
     ];
 
     return (
-      <View style={[blockStyles, style]} {...rest} />
+      <View style={[blockStyles, style]} {...this.props} />
     );
   }
 }
