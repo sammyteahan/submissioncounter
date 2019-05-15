@@ -25,6 +25,8 @@ target 'submissioncounter' do
   pod 'AppCenterReactNativeShared', '~> 1.12.2'
   pod 'react-native-config', :path => '../node_modules/react-native-config'
 
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
 end
 
 post_install do |installer|
