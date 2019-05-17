@@ -23,7 +23,6 @@ target 'submissioncounter' do
   pod 'AppCenter/Crashes', '~> 1.13.2'
   pod 'AppCenter/Analytics', '~> 1.13.2'
   pod 'AppCenterReactNativeShared', '~> 1.12.2'
-  # pod 'react-native-config', :path => '../node_modules/react-native-config'
   # pod 'CodePush', :path => '../node_modules/react-native-code-push'
 end
 
