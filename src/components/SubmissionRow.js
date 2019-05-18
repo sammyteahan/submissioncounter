@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Block, Text, TouchableIcon, theme } from './common';
+import { Block, Text, Icon, TouchableIcon, theme } from './common';
 
 const SubmissionRow = ({ name, count, remaining, onIncrement, ...rest }) => (
   <Block flex={0} row space="between">
@@ -15,16 +15,32 @@ const SubmissionRow = ({ name, count, remaining, onIncrement, ...rest }) => (
       </Block>
     </Block>
     <Block flex={1} center middle>
-      <TouchableIcon
-        name="plus"
-        onPress={onIncrement}
-        style={{ color: 'white', fontSize: 72 }}
-      />
+      <TouchableOpacity onPress={onIncrement}>
+        <Block style={styles.submissionButton}>
+          <Icon
+            name="plus"
+            type="FontAwesome"
+            style={styles.plusIcon}
+          />
+        </Block>
+      </TouchableOpacity>
     </Block>
   </Block>
 );
 
 const styles = StyleSheet.create({
+  submissionButton: {
+    height: 55,
+    width: 55,
+    backgroundColor: '#373F51',
+    borderRadius: 55,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  plusIcon: {
+    fontSize: 18,
+    color: theme.colors.white,
+  },
   muted: {
     color: theme.colors.muted,
   },

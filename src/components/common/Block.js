@@ -14,6 +14,7 @@ class Block extends React.Component {
       left,
       right,
       card,
+      inspect,
       color,
       space,
       style,
@@ -30,6 +31,7 @@ class Block extends React.Component {
       left && styles.left,
       right && styles.right,
       card && styles.card,
+      inspect && styles.inspect,
       color && styles[color], // use defined colors for backgroundColor
       color && !styles[color] && { backgroundColor: color }, // custom bg color
       space && { justifyContent: `space-${space}` },
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
   middle: { justifyContent: 'center' },
   left: { justifyContent: 'flex-start' },
   right: { justifyContent: 'flex-end' },
+  inspect: { borderWidth: 1, borderColor: theme.colors.secondary },
   card: { borderRadius: theme.sizes.border },
   primary: { backgroundColor: theme.colors.primary },
   secondary: { backgroundColor: theme.colors.secondary },

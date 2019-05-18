@@ -5,13 +5,13 @@
  * @flow
  */
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, StatusBar, TextInput, ScrollView, Alert } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, SafeAreaView, StatusBar, ScrollView, Alert } from 'react-native';
 
 import Config from 'react-native-config';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 import SubmissionRow from './SubmissionRow';
-import { Header, TouchableIcon, Text, Block, theme } from './common';
+import { Header, Icon, Text, Block, theme } from './common';
 
 export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
@@ -156,15 +156,18 @@ export default class App extends React.Component {
             <Block flex={1} style={styles.padLeft}>
               <Block column middle>
                 <Text h6 bold>Config</Text>
-                <Text style={[styles.muted, styles.caption]}>endpoint vars</Text>
               </Block>
             </Block>
             <Block flex={1} center middle>
-              <TouchableIcon
-                name="plus"
-                onPress={this.handleAlert}
-                style={{ color: 'white', fontSize: 72 }}
-              />
+              <TouchableOpacity onPress={this.handleAlert}>
+                <Block style={styles.submissionButton}>
+                  <Icon
+                    name="plus"
+                    type="FontAwesome"
+                    style={styles.plusIcon}
+                  />
+                </Block>
+              </TouchableOpacity>
             </Block>
           </Block>
         </ScrollView>
@@ -191,5 +194,17 @@ const styles = StyleSheet.create({
   },
   padLeft: {
     paddingLeft: theme.padding.large,
+  },
+  submissionButton: {
+    height: 55,
+    width: 55,
+    backgroundColor: '#373F51',
+    borderRadius: 55,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  plusIcon: {
+    fontSize: 18,
+    color: theme.colors.white,
   },
 });
