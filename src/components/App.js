@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.darkGray,
   },
   headerTitle: {
-    color: '#fff',
+    color: theme.colors.white,
     fontSize: 28,
   },
   muted: {
