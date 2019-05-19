@@ -14,7 +14,7 @@ const SubmissionRow = ({ name, count, remaining, onIncrement, ...rest }) => (
         <Text style={[styles.muted, styles.caption]}>{remaining} to go</Text>
       </Block>
     </Block>
-    <Block flex={1} center middle>
+    <Block center middle>
       <TouchableOpacity onPress={onIncrement}>
         <Block style={styles.submissionButton}>
           <Icon
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   plusIcon: {
-    fontSize: 18,
+    fontSize: 20,
+    marginTop: 4,
     color: theme.colors.white,
   },
   muted: {
