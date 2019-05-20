@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   plusIcon: {
     fontSize: 20,
-    marginTop: 4,
+    marginTop: 3,
     color: theme.colors.white,
   },
   muted: {
