@@ -19,12 +19,35 @@ export default class App extends React.Component {
   onNotificationWarning = () => ReactNativeHapticFeedback.trigger('notificationWarning', true);
   handleAlert = () => Alert.alert(`${Config.ENV}`, `${Config.API_URL}`);
 
+  renderDate = () => {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+
+    const today = new Date();
+
+    return (
+      <Text h1 style={styles.headerTitle}>{months[today.getMonth()]} {today.getDate()}</Text>
+    );
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Header>
-          <Text h1 style={styles.headerTitle}>Today</Text>
+          {this.renderDate()}
         </Header>
 
         <ScrollView>

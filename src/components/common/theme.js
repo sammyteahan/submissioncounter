@@ -24,7 +24,7 @@ const colors = Object.freeze({
   white: '#fff',
   muted: '#535762', // for typography
   gray: '#383F51',
-  darkGray: '#232837', // bg color
+  darkGray: '#232837', // main bg color
 });
 
 const fonts = Object.freeze({
