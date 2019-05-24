@@ -40,7 +40,9 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>We will never ask for this permission</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We will never ask for this permission</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
