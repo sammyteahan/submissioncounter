@@ -5,10 +5,11 @@ import theme from './theme';
 
 class Text extends React.Component {
   render() {
-    const { h1, h2, h3, h4, h5, h6, bold } = this.props;
+    const { h1, h2, h3, h4, h5, h6, center, bold } = this.props;
 
     const textStyles = [
       styles.text,
+      center && styles.center,
       bold && styles.bold,
       h1 && styles.h1,
       h2 && styles.h2,
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
   h4: theme.fonts.h4,
   h5: theme.fonts.h5,
   h6: theme.fonts.h6,
+  center: { textAlign: 'center' },
   bold: { fontWeight: 'bold' },
   primary: { color: theme.colors.primary },
   secondary: { color: theme.colors.secondary },

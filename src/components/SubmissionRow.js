@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Block, Text, Icon, TouchableIcon, theme } from './common';
 
 const SubmissionRow = ({ name, count, remaining, onIncrement, ...rest }) => (
-  <Block flex={0} row space="between">
+  <Block row space="between">
     <Block flex={1} row right>
       <Text h1 bold>{count}</Text>
     </Block>

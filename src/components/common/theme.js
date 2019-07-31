@@ -11,6 +11,10 @@ const sizes = Object.freeze({
   h4: 32,
   h5: 28,
   h6: 24,
+
+  // misc.
+  buttonRadius: 45,
+  buttonHeight: 45,
 });
 
 const margin = Object.freeze({ ...sizes });

@@ -11,7 +11,7 @@ import Config from 'react-native-config';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 import SubmissionRow from './SubmissionRow';
-import { Header, Icon, Text, Block, theme } from './common';
+import { Header, Icon, TouchableIcon, Text, Block, Button, theme } from './common';
 
 export default class App extends React.Component {
   onHapticSelection = () => ReactNativeHapticFeedback.trigger();
@@ -46,7 +46,7 @@ export default class App extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
-        <Header>
+        <Header style={{ paddingBottom: theme.padding.small }}>
           {this.renderDate()}
         </Header>
 
@@ -78,97 +78,97 @@ export default class App extends React.Component {
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
           <SubmissionRow
             name={'Block'}
             count={31}
-            remaining={7}
+            remaining={4}
             onIncrement={this.onHapticMedium}
           />
 
@@ -193,6 +193,19 @@ export default class App extends React.Component {
               </TouchableOpacity>
             </Block>
           </Block>
+
+        <Block marginHorizontal={theme.margin.large}>
+          <Button
+            color={theme.colors.primary}
+            onPress={() => console.log('handle press')}
+          >
+            <Icon
+              name="plus"
+              type="FontAwesome"
+              style={[styles.btn, styles.plusIcon]}
+            />
+          </Button>
+        </Block>
         </ScrollView>
       </SafeAreaView>
     );
@@ -229,5 +242,8 @@ const styles = StyleSheet.create({
   plusIcon: {
     fontSize: 18,
     color: theme.colors.white,
+  },
+  btn: {
+    textAlign: 'center',
   },
 });

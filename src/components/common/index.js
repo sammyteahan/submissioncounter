@@ -4,6 +4,7 @@ import Text from './Text';
 import Block from './Block';
 import theme from './theme';
 import FixedFooter from './FixedFooter';
+import Button from './Button';
 
 const Common = Object.freeze({
   Header,
@@ -12,6 +13,7 @@ const Common = Object.freeze({
   Block,
   Text,
   FixedFooter,
+  Button,
 });
 
 export {
@@ -23,6 +25,7 @@ export {
   Block,
   Text,
   FixedFooter,
+  Button,
 
   theme,
 };
