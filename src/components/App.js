@@ -194,18 +194,18 @@ export default class App extends React.Component {
             </Block>
           </Block>
 
-        <Block marginHorizontal={theme.margin.large} marginBottom={theme.margin.normal}>
-          <Button
-            color={theme.colors.primary}
-            onPress={() => console.log('handle press')}
-          >
-            <Icon
-              name="plus"
-              type="FontAwesome"
-              style={[styles.btn, styles.plusIcon]}
-            />
-          </Button>
-        </Block>
+          <Block marginHorizontal={theme.margin.large} marginBottom={theme.margin.normal}>
+            <Button
+              color={theme.colors.primary}
+              onPress={() => console.log('handle press')}
+            >
+              <Icon
+                name="plus"
+                type="FontAwesome"
+                style={[styles.btn, styles.plusIcon]}
+              />
+            </Button>
+          </Block>
         </ScrollView>
       </SafeAreaView>
     );
